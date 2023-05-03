@@ -3,10 +3,57 @@
 <head>
   <meta charset="UTF-8">
   <title>本週是今年的第幾週？</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+      margin: 0;
+      padding: 0;
+    }
+
+    #container {
+      max-width: 600px;
+      margin: 0 auto;
+      text-align: center;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    }
+
+    h1 {
+      font-size: 2em;
+      margin-bottom: 0.5em;
+    }
+
+    p {
+      font-size: 1.5em;
+      margin: 0;
+      color: #666;
+    }
+
+    p.week {
+      font-weight: bold;
+      color: #333;
+      margin-top: 0.5em;
+    }
+
+    a {
+      color: #00f;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
 </head>
 <body>
-  <p id="today"></p>
-  <p id="week">本年度第 ? 週</p>
+  <div id="container">
+    <h1>今天是<span id="today"></span></h1>
+    <p>今天是本年度的第<span id="week"></span>週</p>
+    <p class="note">請注意，這個網站的計算方式可能與您所在地區的慣例有所不同。</p>
+  </div>
 
   <script>
     // 取得今天日期
@@ -17,8 +64,8 @@
     var weekNum = Math.ceil(((today - yearStart) / 86400000 + yearStart.getDay() + 1) / 7);
 
     // 更新網頁顯示結果
-    document.getElementById("today").textContent = "今天是" + today;
-    document.getElementById("week").textContent = "本年度第 " + weekNum + " 週";
+    document.getElementById("today").textContent = " " + today;
+    document.getElementById("week").textContent = " " + weekNum;
   </script>
 </body>
 </html>
