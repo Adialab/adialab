@@ -5,6 +5,7 @@
   <title>本週是今年的第幾週？</title>
 </head>
 <body>
+  <p id="today"></p>
   <p id="week">本年度第 ? 週</p>
 
   <script>
@@ -16,6 +17,7 @@
     var weekNum = Math.ceil(((today - yearStart) / 86400000 + yearStart.getDay() + 1) / 7);
 
     // 更新網頁顯示結果
+    document.getElementById("today").textContent = "今天是" + today;
     document.getElementById("week").textContent = "本年度第 " + weekNum + " 週";
   </script>
 </body>
