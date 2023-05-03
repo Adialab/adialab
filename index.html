@@ -27,15 +27,21 @@
     }
 
     p {
-      font-size: 1.5em;
+      font-size: 1em;
       margin: 0;
       color: #666;
     }
 
     p.week {
+      font-size: 1.5em;
       font-weight: bold;
-      color: #333;
+      color: #00f;
       margin-top: 0.5em;
+    }
+    
+    p.note {
+      font-size: 0.5em;
+      color: #ddd;
     }
 
     a {
@@ -65,8 +71,8 @@
     var weekNum = Math.ceil(((today - yearStart) / 86400000 + yearStart.getDay() + 1) / 7);
 
     // 更新網頁顯示結果
-    document.getElementById("today").textContent = " " + today;
-    document.getElementById("week").textContent = " " + weekNum;
+    document.getElementById("today").textContent = " " + today + " ";
+    document.getElementById("week").textContent = " " + weekNum + " ";
   </script>
 </body>
 </html>
