@@ -67,6 +67,7 @@
     <h1>本週是今年的第幾週？</h1>
     <p>今天是<span id="today"></span></p>
     <p>是本年度的第<span id="week"></span>週</p>
+    <p><span id="test"></span></p>
     <hr/>
     <p class="note">這個網站的計算方式可能與您所在地區的慣例有所不同。</p>
   </div>
@@ -82,6 +83,7 @@
     // 更新網頁顯示結果
     document.getElementById("today").textContent = " " + today.getFullYear() + "/" + (today.getMonth()+1) + "/" + today.getDay() + " ";
     document.getElementById("week").textContent = " " + weekNum + " ";
+    document.getElementById("test").textContent = " " + today + " ";
   </script>
 </body>
 </html>
