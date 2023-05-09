@@ -81,7 +81,7 @@
     var weekNum = Math.ceil(((today - yearStart) / 86400000 + yearStart.getDay() + 1) / 7);
 
     // 更新網頁顯示結果
-    document.getElementById("today").textContent = " " + today.getFullYear() + "/" + (today.getMonth()+1) + "/" + today.getDay() + " ";
+    document.getElementById("today").textContent = " " + today.getFullYear() + "/" + (today.getMonth()+1) + "/" + today.getDate() + " ";
     document.getElementById("week").textContent = " " + weekNum + " ";
     document.getElementById("test").textContent = " " + today + " ";
   </script>
