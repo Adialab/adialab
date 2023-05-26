@@ -53,8 +53,8 @@
       text-decoration: underline;
     }
   </style>
-    <script src="https://adialab.github.io/adialab/jquery.slim.min.js"></script>
-    <script src="https://adialab.github.io/adialab/sheetrock.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css"></script>
+    <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-TVS2Q2KSBS"></script>
     <script>
@@ -83,6 +83,8 @@
        url: pressSheet,
        query: "select G,C,D,E,H,F order by G desc",
        fetchSize: 25
+      }).on('sheetrock:loaded', function () {
+        $(this).DataTable();
       });
     </script>
     
