@@ -71,34 +71,35 @@
     <p>是本年度的第<span id="week"></span>週</p>
     <hr/>
     <p class="note">這個網站的計算方式可能與您所在地區的慣例有所不同。</p>
-  </div>
   
-  <script data-language="javascript">
-    var mySpreadsheet = 'https://docs.google.com/spreadsheets/d/1qT1LyvoAcb0HTsi2rHBltBVpUBumAUzT__rhMvrz5Rk/edit#gid=0';
-    var pressSheet = 'https://docs.google.com/spreadsheets/d/1XvOV9WKD6giC7rwta7urZpSGge8EBAonLgabCjVJytc/edit#gid=0';
-  </script>
-   <div>
-     <table id="pressRelease"></table>
-   </div>
-  <script data-language="javascript">
-    $('#pressRelease').sheetrock({
-     url: pressSheet,
-     fetchSize: 25
-    });
-  </script>
-  <script>
-    // 取得今天日期
-    var today = new Date();
-    var day_list = ['日', '一', '二', '三', '四', '五', '六'];
+    <script data-language="javascript">
+      var mySpreadsheet = 'https://docs.google.com/spreadsheets/d/1qT1LyvoAcb0HTsi2rHBltBVpUBumAUzT__rhMvrz5Rk/edit#gid=0';
+      var pressSheet = 'https://docs.google.com/spreadsheets/d/1XvOV9WKD6giC7rwta7urZpSGge8EBAonLgabCjVJytc/edit#gid=0';
+    </script>
+    
+    <table id="pressRelease"></table>
+    <script data-language="javascript">
+      $('#pressRelease').sheetrock({
+       url: pressSheet,
+       query: "select publish_date,corp,category,title,brief,url order by publish_date desc",
+       fetchSize: 25
+      });
+    </script>
+    
+    <script>
+      // 取得今天日期
+      var today = new Date();
+      var day_list = ['日', '一', '二', '三', '四', '五', '六'];
 
-    // 計算今天是本年度第幾週
-    var yearStart = new Date(today.getFullYear(), 0, 1);
-    var weekNum = Math.ceil(((today - yearStart) / 86400000 + yearStart.getDay() + 1) / 7);
+      // 計算今天是本年度第幾週
+      var yearStart = new Date(today.getFullYear(), 0, 1);
+      var weekNum = Math.ceil(((today - yearStart) / 86400000 + yearStart.getDay() + 1) / 7);
 
-    // 更新網頁顯示結果
-    document.getElementById("today").textContent = " " + today.getFullYear() + "/" + (today.getMonth()+1) + "/" + today.getDate() + " (" + day_list[today.getDay()] + ")" ;
-    document.getElementById("week").textContent = " " + weekNum + " ";
-  </script>
+      // 更新網頁顯示結果
+      document.getElementById("today").textContent = " " + today.getFullYear() + "/" + (today.getMonth()+1) + "/" + today.getDate() + " (" + day_list[today.getDay()] + ")" ;
+      document.getElementById("week").textContent = " " + weekNum + " ";
+    </script>
+  </div>
 
 </body>
 </html>
