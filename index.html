@@ -72,8 +72,20 @@
     <hr/>
     <p class="note">這個網站的計算方式可能與您所在地區的慣例有所不同。</p>
   </div>
-  <table id="pressRelease"></table>
-
+  
+  <script data-language="javascript">
+    var mySpreadsheet = 'https://docs.google.com/spreadsheets/d/1qT1LyvoAcb0HTsi2rHBltBVpUBumAUzT__rhMvrz5Rk/edit#gid=0';
+    var pressSheet = 'https://docs.google.com/spreadsheets/d/1XvOV9WKD6giC7rwta7urZpSGge8EBAonLgabCjVJytc/edit?usp=sharing';
+  </script>
+   <div>
+     <table id="pressRelease"></table>
+   </div>
+  <script data-language="javascript">
+    $('#pressRelease').sheetrock({
+     url: pressSheet,
+     fetchSize: 25
+    });
+  </script>
   <script>
     // 取得今天日期
     var today = new Date();
@@ -87,13 +99,6 @@
     document.getElementById("today").textContent = " " + today.getFullYear() + "/" + (today.getMonth()+1) + "/" + today.getDate() + " (" + day_list[today.getDay()] + ")" ;
     document.getElementById("week").textContent = " " + weekNum + " ";
   </script>
-  <script>
-    var mySpreadsheet = 'https://docs.google.com/spreadsheets/d/1qT1LyvoAcb0HTsi2rHBltBVpUBumAUzT__rhMvrz5Rk/edit#gid=0';
-    var pressSheet = 'https://docs.google.com/spreadsheets/d/1XvOV9WKD6giC7rwta7urZpSGge8EBAonLgabCjVJytc/edit?usp=sharing';
-    // Load an entire worksheet.
-    $('#pressRelease').sheetrock({
-  url: pressSheet
-});
-  </script>
+
 </body>
 </html>
