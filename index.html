@@ -82,7 +82,6 @@
       $('#pressRelease').sheetrock({
        url: pressSheet,
        query: "select G,C,D,E,H,F order by G desc",
-       fetchSize: 25
       }).on('sheetrock:loaded', function () {
         $(this).DataTable();
       });
