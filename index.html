@@ -53,9 +53,11 @@
       text-decoration: underline;
     }
   </style>
+    
     <link rel="stylesheet" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css">
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+    <script src="https://adialab.github.io/adialab/sheetrock.min.js"></script>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-TVS2Q2KSBS"></script>
     <script>
@@ -80,7 +82,7 @@
     <table id="pressRelease"></table>
     <script data-language="javascript">
       let table = new DataTable('#pressRelease');
-      $('#pressRelease').DataTable({
+      $('#pressRelease').sheetrock({
        url: pressSheet,
        query: "select G,C,D,E,H,F order by G desc",
       }).on('sheetrock:loaded', function () {
