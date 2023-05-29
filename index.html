@@ -116,7 +116,8 @@
         query: "select G,C,D,E,H,F order by G desc",
       }).on('sheetrock:loaded',
             function () {
-        var dataTable = $('#pressRelease').DataTable($.extend(defaultOptions, searchOptions, language, printTable))
+        //var dataTable = $('#pressRelease').DataTable($.extend(defaultOptions, searchOptions, language, printTable))
+        var dataTable = $('#pressRelease').DataTable("bPaginate": true, "searching": true, "fixedHeader": true)
       });
     </script>
     
