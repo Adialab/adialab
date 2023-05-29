@@ -89,11 +89,27 @@
     
     <table id="pressRelease" class="display"></table>
     <script type="text/javascript">
+      var searchOptions = $.fn.dataTable.ext.deepLink( ['search.search' ] );
+     
+      var language = {
+        "language": {
+            url: 'https://cdn.datatables.net/plug-ins/1.12.1/i18n/pt-BR.json'
+        }
+      };
+      
       var defaultOptions = {
         "pageLength": 20,
          "pagingType": "full",
           lengthMenu: [20,50,100]
                                   };
+      
+      var printTable = {
+        dom: 'Blfrtip',
+            buttons: [ {
+            extend: 'print',
+            title: 'test',
+                          } ]
+                 };
      
       $('#pressRelease').sheetrock({
         url: pressSheet,
